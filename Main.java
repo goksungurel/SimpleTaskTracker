@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         TaskManager manager = new TaskManager();
+        manager.loadTasksFromFile("tasks.txt");
+        
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
 
@@ -44,6 +46,7 @@ public class Main {
                     break;
 
                 case 5:
+                    manager.saveTasksToFile("tasks.txt");
                     running = false;
                     System.out.println("Exiting...");
                     break;
